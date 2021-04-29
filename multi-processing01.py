@@ -6,7 +6,7 @@ def count(name):
     for i in range(1,500):
         print(name," > ",i)
 
-num_list = ['p1','p2','p3','p4']
+num_list = ['p1','p2','p3','p4','p5']
 
 for num in num_list:
     count(num)
