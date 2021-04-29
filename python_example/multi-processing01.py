@@ -1,3 +1,5 @@
+# multiprocesse를 사용하지 않고 돌렸을 때
+
 import time
 
 start_time =time.time()

@@ -1,7 +1,7 @@
 import socket
 
 s=socket.socket()
-s.connect(('192.168.0.25',6534))
+s.connect(('localhost',6534))
 
 def count(name):
     for i in range(1,30):

@@ -1,10 +1,11 @@
+# multiprocesse를 사용할 때
 import multiprocessing
 import time
 
 start_time =time.time()
 
 def count(name):
-    for i in range(1,30):
+    for i in range(1,500):
         print(name," > ",i)
 
 num_list = ['p1','p2','p3','p4']
