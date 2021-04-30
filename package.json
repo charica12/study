@@ -18,6 +18,7 @@
   "homepage": "https://github.com/charica12/study#readme",
   "dependencies": {
     "bluebird": "^3.7.2",
+    "cluster": "^0.7.7",
     "multiprocessing": "^1.2.0"
   }
 }
