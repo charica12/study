@@ -19,6 +19,12 @@
   "dependencies": {
     "bluebird": "^3.7.2",
     "cluster": "^0.7.7",
-    "multiprocessing": "^1.2.0"
+    "express": "^4.17.1",
+    "farmhash": "^3.2.1",
+    "multiprocessing": "^1.2.0",
+    "net": "^1.0.2",
+    "path": "^0.12.7",
+    "socket.io": "^4.0.1",
+    "socket.io-redis": "^6.1.0"
   }
 }

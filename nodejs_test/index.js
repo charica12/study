@@ -1,5 +1,5 @@
 const cluster = require('cluster');
-const express = require('express');
+const net = require('net');
 const numCPUs = require('os').cpus().length;
 var SERVER_PORT = 8000
 
@@ -26,15 +26,31 @@ if (cluster.isMaster) {
   });
   
 } else {
-  var app = express()
-  app.get('/',(req,res)=>{
-    console.log('execute worker pid is '+process.pid)
-    res.send('execute worker pid is '+process.pid)
-  })
 
-  var server = app.listen(SERVER_PORT,()=>{
-    var host = '192.168.1.146'
+  var server = net.createServer((socket,SERVER_PORT)=>{
+    var host = '127.0.0.1'
     var port = server.address().port
+
+    console.log('클라이언트 접속')
+    socket.write('welcome to socket server')
+    socket.on('data', function(chunk) {
+        console.log('클라이언트가 보냄 : ',
+        chunk.toString());
+    });
+
+    socket.on('end', function() {
+        console.log('클라이언트 접속 종료');
+    });
+
+    server.on('listening', function() {
+        console.log('Server is listening');
+    });
+
+    server.on('close', function() {
+        console.log('Server closed');
+    });
+
+    server.listen(port);
 
     console.log(`app listening at http://${host}:${port}`)
   })
